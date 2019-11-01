@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{f68b5774-a4dd-4fe3-a619-b73fda4f48db}">
+		<property name="assetPath">
+			<value>01 Seawash, Calm.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>244.02666666666667</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{cd7b8c45-c92b-40e4-8275-4e3710d0cff7}</destination>
+		</relationship>
+	</object>
+</objects>
