@@ -16,7 +16,7 @@ MonoBehaviour:
   HasSourceProject: 0
   HasPlatforms: 0
   sourceProjectPath: ../FMOD Project/GitHubGameOff/GitHubGameOff.fspro
-  sourceBankPath: ../FMOD Project/GitHubGameOff/Build/Desktop
+  sourceBankPath: Assets\StreamingAssets
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1
   BankLoadType: 0
