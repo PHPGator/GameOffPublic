@@ -23,8 +23,8 @@ public class SoundController : MonoBehaviour
         }
     }
 
-    public void PlayGunshot(GameObject SoundOrigin)
+    public void PlayGunshot(GameObject soundOrigin)
     {
-        RuntimeManager.PlayOneShot(GunShot, SoundOrigin.transform.position);
+        RuntimeManager.PlayOneShot(GunShot, soundOrigin.transform.position);
     }
 }
