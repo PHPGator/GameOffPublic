@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
   SwitchSettingsMigration: 1
-  HasSourceProject: 1
+  HasSourceProject: 0
   HasPlatforms: 1
   sourceProjectPath: ../FMOD Project/GitHubGameOff/GitHubGameOff.fspro
-  sourceBankPath: ..\FMOD Project\GitHubGameOff\Build
+  sourceBankPath: Assets\FMODAssets
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1
   BankLoadType: 0
@@ -76,7 +76,9 @@ MonoBehaviour:
   - Platform: 20
     Value: 32
   Plugins: []
-  MasterBanks: []
-  Banks: []
+  MasterBanks:
+  - MasterBank
+  Banks:
+  - SFX
   BanksToLoad: []
   LiveUpdatePort: 9264

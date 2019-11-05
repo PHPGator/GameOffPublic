@@ -1,5 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7324131892741418280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD Project/GitHubGameOff/Build/Desktop/SFX.bank
+  SubDir: 
+  lastModified: 637085141111056265
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &-6833553300677212674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17,7 +35,7 @@ MonoBehaviour:
   lastModified: 637085133082364669
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-4798296641055687249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35,7 +53,7 @@ MonoBehaviour:
   lastModified: 637085133083718748
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-2838038701482629723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51,7 +69,7 @@ MonoBehaviour:
   Path: event:/Beach
   guid: 8b09495a1847974b93d4cf4e28d9cb5b
   Banks:
-  - {fileID: -4798296641055687249}
+  - {fileID: 7167315582255650354}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -59,6 +77,26 @@ MonoBehaviour:
   MinDistance: 2.8
   MaxDistance: 20
   Length: 244026
+--- !u!114 &-68173846825795811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MasterBank.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMODAssets/Desktop/MasterBank.strings.bank
+  SubDir: 
+  lastModified: 637085434185589884
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 984
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,18 +110,18 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 817974289643946989}
-  - {fileID: -6833553300677212674}
-  - {fileID: -4798296641055687249}
+  - {fileID: -68173846825795811}
+  - {fileID: 7213213474320045640}
+  - {fileID: 7167315582255650354}
   EditorEvents:
   - {fileID: 4269975896958691310}
   - {fileID: -2838038701482629723}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -6833553300677212674}
+  - {fileID: 7213213474320045640}
   StringsBanks:
-  - {fileID: 817974289643946989}
-  stringsBankWriteTime: 637085133082577994
+  - {fileID: -68173846825795811}
+  stringsBankWriteTime: 637085434185589884
   cacheVersion: 3
 --- !u!114 &817974289643946989
 MonoBehaviour:
@@ -99,12 +137,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: ../FMOD Project/GitHubGameOff/Build/Desktop/MasterBank.strings.bank
   SubDir: 
-  lastModified: 637085133082577994
+  lastModified: 637085141109970013
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 984
-  Exists: 1
+  Exists: 0
 --- !u!114 &4269975896958691310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,7 +158,7 @@ MonoBehaviour:
   Path: event:/GunShot
   guid: 85332e3221a7104c84d56f421f53be9e
   Banks:
-  - {fileID: -4798296641055687249}
+  - {fileID: 7167315582255650354}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -128,3 +166,57 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2606
+--- !u!114 &7167315582255650354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMODAssets/Desktop/SFX.bank
+  SubDir: 
+  lastModified: 637085434186953861
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &7213213474320045640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MasterBank.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMODAssets/Desktop/MasterBank.bank
+  SubDir: 
+  lastModified: 637085434185530347
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &8001651217852901091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MasterBank.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD Project/GitHubGameOff/Build/Desktop/MasterBank.bank
+  SubDir: 
+  lastModified: 637085141109920410
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
