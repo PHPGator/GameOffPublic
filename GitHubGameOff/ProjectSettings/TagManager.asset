@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Fire
+  - Debugging - Player Health
   layers:
   - Default
   - TransparentFX
