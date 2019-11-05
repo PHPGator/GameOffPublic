@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="Workspace" id="{64853b27-c9d9-4ec3-9800-fb759b47f51d}">
+		<property name="builtBanksOutputDirectory">
+			<value>../../GitHubGameOff/Assets/StreamingAssets</value>
+		</property>
+		<relationship name="masterEventFolder">
+			<destination>{77d8f2bf-9380-419e-85e7-604a43a7c666}</destination>
+		</relationship>
+		<relationship name="masterTagFolder">
+			<destination>{615b2a00-ad5f-4b03-8c4e-ea9684883c8f}</destination>
+		</relationship>
+		<relationship name="masterEffectPresetFolder">
+			<destination>{714d2533-23c6-4e12-a8c9-51ac959675ee}</destination>
+		</relationship>
+		<relationship name="masterParameterPresetFolder">
+			<destination>{60c3d4df-478c-4e4c-875c-a00ca52e7780}</destination>
+		</relationship>
+		<relationship name="masterBankFolder">
+			<destination>{2d02debf-a3ee-4919-8128-cb5980460973}</destination>
+		</relationship>
+		<relationship name="masterAssetFolder">
+			<destination>{cd7b8c45-c92b-40e4-8275-4e3710d0cff7}</destination>
+		</relationship>
+		<relationship name="mixer">
+			<destination>{03f9f429-e033-4a0b-bea6-35ac8c14de9b}</destination>
+		</relationship>
+		<relationship name="platforms">
+			<destination>{ba088b6f-299c-4b26-80de-bc58ba6dd42d}</destination>
+		</relationship>
+	</object>
+</objects>
