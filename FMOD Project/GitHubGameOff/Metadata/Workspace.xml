@@ -2,9 +2,8 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="Workspace" id="{64853b27-c9d9-4ec3-9800-fb759b47f51d}">
 		<property name="builtBanksOutputDirectory">
-			<value>Build</value>
+			<value>../../GitHubGameOff/Assets/StreamingAssets</value>
 		</property>
-		<property name="builtBanksEncryptionKey" />
 		<relationship name="masterEventFolder">
 			<destination>{77d8f2bf-9380-419e-85e7-604a43a7c666}</destination>
 		</relationship>
