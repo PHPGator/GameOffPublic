@@ -1,6 +1,28 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< HEAD
 --- !u!114 &-6712361357098853594
+=======
+--- !u!114 &-8507549111716737552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMODAssets/Desktop/SFX.bank
+  SubDir: 
+  lastModified: 637085880315404495
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-7324131892741418280
+>>>>>>> 28b3eb7292732873e8e6d022aef63a3fcf7c085c
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -34,11 +56,35 @@ MonoBehaviour:
   SubDir: 
   lastModified: 637085516467254870
   LoadResult: 0
+<<<<<<< HEAD
   FileSizes:
   - Name: Desktop
     Value: 984
   Exists: 1
 --- !u!114 &-4877545686804460261
+=======
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-6562129355683735933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMODAssets/Desktop/SFX.bank
+  SubDir: 
+  lastModified: 637085454633462531
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-4798296641055687249
+>>>>>>> 28b3eb7292732873e8e6d022aef63a3fcf7c085c
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,8 +101,54 @@ MonoBehaviour:
   lastModified: 637085516468222071
   LoadResult: 0
   FileSizes: []
+<<<<<<< HEAD
   Exists: 1
 --- !u!114 &-3748560697340952242
+=======
+  Exists: 0
+--- !u!114 &-2838038701482629723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Beach
+  m_EditorClassIdentifier: 
+  Path: event:/Beach
+  guid: 8b09495a1847974b93d4cf4e28d9cb5b
+  Banks:
+  - {fileID: -8507549111716737552}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 2.8
+  MaxDistance: 20
+  Length: 244026
+--- !u!114 &-2059849975709259966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MasterBank.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMODAssets/Desktop/MasterBank.bank
+  SubDir: 
+  lastModified: 637085454632492476
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-68173846825795811
+>>>>>>> 28b3eb7292732873e8e6d022aef63a3fcf7c085c
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -70,11 +162,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/FMODAssets/Desktop/SFX.bank
   SubDir: 
+<<<<<<< HEAD
   lastModified: 637085515181076998
   LoadResult: 0
   FileSizes: []
   Exists: 0
 --- !u!114 &-2443689853940710039
+=======
+  lastModified: 637085880314746261
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 984
+  Exists: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: -68173846825795811}
+  - {fileID: 2920441865778048175}
+  - {fileID: -8507549111716737552}
+  EditorEvents:
+  - {fileID: 4269975896958691310}
+  - {fileID: -2838038701482629723}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 2920441865778048175}
+  StringsBanks:
+  - {fileID: -68173846825795811}
+  stringsBankWriteTime: 637085880314746261
+  cacheVersion: 3
+--- !u!114 &817974289643946989
+>>>>>>> 28b3eb7292732873e8e6d022aef63a3fcf7c085c
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,7 +220,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+<<<<<<< HEAD
 --- !u!114 &-1565238768939288578
+=======
+--- !u!114 &2920441865778048175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MasterBank.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMODAssets/Desktop/MasterBank.bank
+  SubDir: 
+  lastModified: 637085880313918468
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &4269975896958691310
+>>>>>>> 28b3eb7292732873e8e6d022aef63a3fcf7c085c
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,7 +257,11 @@ MonoBehaviour:
   Path: event:/GunShot
   guid: 85332e3221a7104c84d56f421f53be9e
   Banks:
+<<<<<<< HEAD
   - {fileID: -4877545686804460261}
+=======
+  - {fileID: -8507549111716737552}
+>>>>>>> 28b3eb7292732873e8e6d022aef63a3fcf7c085c
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -182,7 +336,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+<<<<<<< HEAD
 --- !u!114 &8330159057769198905
+=======
+--- !u!114 &7291973484960968020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMODAssets/Desktop/SFX.bank
+  SubDir: 
+  lastModified: 637085813685411224
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &8001651217852901091
+>>>>>>> 28b3eb7292732873e8e6d022aef63a3fcf7c085c
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,4 +375,25 @@ MonoBehaviour:
   lastModified: 637085434186953861
   LoadResult: 0
   FileSizes: []
+<<<<<<< HEAD
+=======
+  Exists: 0
+--- !u!114 &8344847412648331802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MasterBank.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMODAssets/Desktop/MasterBank.bank
+  SubDir: 
+  lastModified: 637085813680880820
+  LoadResult: 0
+  FileSizes: []
+>>>>>>> 28b3eb7292732873e8e6d022aef63a3fcf7c085c
   Exists: 1

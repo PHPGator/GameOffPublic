@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Kyle.unity
     guid: d4f7c19c3dad156408528bc75a0c867b
+  - enabled: 1
+    path: Assets/Scenes/faceves/DimensionA.unity
+    guid: 40dfcf26e7f34504aa4b8553d00cfa27
+  - enabled: 1
+    path: Assets/Scenes/faceves/DimensionB.unity
+    guid: ac0caf280f803964a98a8e0a43189b8e
   m_configObjects: {}
