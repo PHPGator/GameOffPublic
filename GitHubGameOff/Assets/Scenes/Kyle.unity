@@ -515,8 +515,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1129239417}
-  m_LocalRotation: {x: -0.11290546, y: 0.71193075, z: -0.117672436, w: -0.68305206}
-  m_LocalPosition: {x: 9.078299, y: 4.1420655, z: 2.3955395}
+  m_LocalRotation: {x: 0.114175856, y: 0.51282215, z: -0.06904203, w: 0.8480629}
+  m_LocalPosition: {x: -10.317297, y: 5.88317, z: -2.548328}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -894,6 +894,8 @@ GameObject:
   - component: {fileID: 1846629620}
   - component: {fileID: 1846629624}
   - component: {fileID: 1846629625}
+  - component: {fileID: 1846629627}
+  - component: {fileID: 1846629626}
   m_Layer: 0
   m_Name: Listener
   m_TagString: Untagged
@@ -1000,6 +1002,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
+--- !u!114 &1846629626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846629619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 113e4aa2cd3db44d1ac0cb7e9794964b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalGainDb: 0
+  occlusionMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  stereoSpeakerModeEnabled: 0
+  recorderSeamless: 0
+  recorderSourceTag: Untagged
+  recorderFoldout: 0
+--- !u!81 &1846629627
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846629619}
+  m_Enabled: 1
 --- !u!1 &1923258824
 GameObject:
   m_ObjectHideFlags: 0
@@ -1085,11 +1115,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1923258824}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 1.6365, y: 6.9006, z: -2.8345}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &2077212173
 GameObject:
@@ -1349,7 +1379,7 @@ PrefabInstance:
     - target: {fileID: 4348971678034980507, guid: a38ca26aa39e61549839ed99e426e577,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4348971678034980507, guid: a38ca26aa39e61549839ed99e426e577,
         type: 3}
