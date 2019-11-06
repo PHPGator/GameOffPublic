@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class DimensionController : MonoBehaviour
-{
+{   
+    //make sure that you dont call SwapDimensions when its in midst of swapping through Coroutine.
     public static bool Swapping
     {
         get; private set;
@@ -12,8 +13,8 @@ public class DimensionController : MonoBehaviour
 
     [SerializeField] private TwinCameraController twinCameras;
     [SerializeField] private int dimensionBBuildIndex = 1;
-    private bool swapTriggered;
-    private readonly float swapTime = .85f;
+    //private bool swapTriggered;
+    //private readonly float swapTime = .85f;
 
     private void Awake()
     {
@@ -33,7 +34,6 @@ public class DimensionController : MonoBehaviour
     }
     private void SwapDimensions()
     {
-        Swapping = true;
         StartCoroutine(SwapAsync());
     }
 
@@ -49,9 +49,9 @@ public class DimensionController : MonoBehaviour
     private IEnumerator SwapAsync()
     {
         Swapping = true;
-        swapTriggered = true;
+        //swapTriggered = true;
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(.50f);
         twinCameras.SwapCameras();
 
         Swapping = false;

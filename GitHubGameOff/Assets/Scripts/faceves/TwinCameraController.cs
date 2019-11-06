@@ -6,16 +6,18 @@ public class TwinCameraController : MonoBehaviour
     [SerializeField] private Camera activeCamera;
     [SerializeField] private Camera hiddenCamera;
 
-    /**
+    
+    //Assigning render texture for initial hidden camera
     private void Awake()
     {
-        var rt = new RenderTexture(Screen.width, Screen.height, 24);
+        RenderTexture rt = new RenderTexture(Screen.width, Screen.height, 24);
         hiddenCamera.targetTexture = rt;
     }
-    **/
+    
 
     public void SwapCameras()
     {
+        //grabbing camera texture from the alternate(hidden) camera to prep for swap
         activeCamera.targetTexture = hiddenCamera.targetTexture;
         hiddenCamera.targetTexture = null;
 
