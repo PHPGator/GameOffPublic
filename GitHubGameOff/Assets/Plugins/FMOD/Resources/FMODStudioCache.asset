@@ -72,6 +72,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-3384649539990406129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMODAssets/Desktop/SFX.bank
+  SubDir: 
+  lastModified: 637085454633462531
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-2838038701482629723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,7 +105,7 @@ MonoBehaviour:
   Path: event:/Beach
   guid: 8b09495a1847974b93d4cf4e28d9cb5b
   Banks:
-  - {fileID: 7291973484960968020}
+  - {fileID: -3384649539990406129}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -95,6 +113,24 @@ MonoBehaviour:
   MinDistance: 2.8
   MaxDistance: 20
   Length: 244026
+--- !u!114 &-2543427416181156475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MasterBank.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMODAssets/Desktop/MasterBank.bank
+  SubDir: 
+  lastModified: 637085454632492476
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-2059849975709259966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,7 +163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/FMODAssets/Desktop/MasterBank.strings.bank
   SubDir: 
-  lastModified: 637085813681337719
+  lastModified: 637085454632492476
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -147,17 +183,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -68173846825795811}
-  - {fileID: 8344847412648331802}
-  - {fileID: 7291973484960968020}
+  - {fileID: -2543427416181156475}
+  - {fileID: -3384649539990406129}
   EditorEvents:
   - {fileID: 4269975896958691310}
   - {fileID: -2838038701482629723}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 8344847412648331802}
+  - {fileID: -2543427416181156475}
   StringsBanks:
   - {fileID: -68173846825795811}
-  stringsBankWriteTime: 637085813681337719
+  stringsBankWriteTime: 637085454632492476
   cacheVersion: 3
 --- !u!114 &817974289643946989
 MonoBehaviour:
@@ -194,7 +230,7 @@ MonoBehaviour:
   Path: event:/GunShot
   guid: 85332e3221a7104c84d56f421f53be9e
   Banks:
-  - {fileID: 7291973484960968020}
+  - {fileID: -3384649539990406129}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
