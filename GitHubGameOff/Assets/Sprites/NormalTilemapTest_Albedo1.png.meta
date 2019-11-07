@@ -1,0 +1,811 @@
+fileFormatVersion: 2
+guid: a5ab23764835e8946b6a74f134d52e00
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5653742849396396183
+    second: NormalTilemapTest_Albedo1_0
+  - first:
+      213: -7785744286440357953
+    second: NormalTilemapTest_Albedo1_1
+  - first:
+      213: 1292744326454857033
+    second: NormalTilemapTest_Albedo1_2
+  - first:
+      213: -3226054798264299743
+    second: NormalTilemapTest_Albedo1_3
+  - first:
+      213: -7469848268724187092
+    second: NormalTilemapTest_Albedo1_4
+  - first:
+      213: -2715851937896092315
+    second: NormalTilemapTest_Albedo1_5
+  - first:
+      213: 8883064719446516875
+    second: NormalTilemapTest_Albedo1_6
+  - first:
+      213: -6219734125664356262
+    second: NormalTilemapTest_Albedo1_7
+  - first:
+      213: -4651309002874277
+    second: NormalTilemapTest_Albedo1_8
+  - first:
+      213: -1540234997126163464
+    second: NormalTilemapTest_Albedo1_9
+  - first:
+      213: 4388694354943476345
+    second: NormalTilemapTest_Albedo1_10
+  - first:
+      213: 1887299727217441455
+    second: NormalTilemapTest_Albedo1_11
+  - first:
+      213: -5181359815168193114
+    second: NormalTilemapTest_Albedo1_12
+  - first:
+      213: -1452772620953024974
+    second: NormalTilemapTest_Albedo1_13
+  - first:
+      213: -1587620023634298950
+    second: NormalTilemapTest_Albedo1_14
+  - first:
+      213: -660919474747913875
+    second: NormalTilemapTest_Albedo1_15
+  - first:
+      213: 3534455675550574713
+    second: NormalTilemapTest_Albedo1_16
+  - first:
+      213: 2364569041634226996
+    second: NormalTilemapTest_Albedo1_17
+  - first:
+      213: -6886742275824783818
+    second: NormalTilemapTest_Albedo1_18
+  - first:
+      213: 2668035470660485388
+    second: NormalTilemapTest_Albedo1_19
+  - first:
+      213: 2753060410153018549
+    second: NormalTilemapTest_Albedo1_20
+  - first:
+      213: -7959105969216495269
+    second: NormalTilemapTest_Albedo1_21
+  - first:
+      213: -3468637383657621766
+    second: NormalTilemapTest_Albedo1_22
+  - first:
+      213: -6778173063995222611
+    second: NormalTilemapTest_Albedo1_23
+  - first:
+      213: -8338670686276468749
+    second: NormalTilemapTest_Albedo1_24
+  - first:
+      213: -5991415387985059507
+    second: NormalTilemapTest_Albedo1_25
+  - first:
+      213: 4803545162733353600
+    second: NormalTilemapTest_Albedo1_26
+  - first:
+      213: -4553874572365359825
+    second: NormalTilemapTest_Albedo1_27
+  - first:
+      213: 6105634773559924090
+    second: NormalTilemapTest_Albedo1_28
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: NormalTilemapTest_Albedo1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 55
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e0639c88fc9a2e4c81e4a9ec80e434a
+      internalID: -5653742849396396183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NormalTilemapTest_Albedo1_1
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 55
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b9456eee8964234f93c2092618cf9f4
+      internalID: -7785744286440357953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NormalTilemapTest_Albedo1_2
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 55
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7df1c2a848b9eaf4e919a628c2791ce7
+      internalID: 1292744326454857033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NormalTilemapTest_Albedo1_3
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 55
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 972e119c0ee886346ba318c234c63edd
+      internalID: -3226054798264299743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NormalTilemapTest_Albedo1_4
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 55
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf075e1493913be48a4d7f562c72702a
+      internalID: -7469848268724187092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NormalTilemapTest_Albedo1_5
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 55
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d960c42a98e9f71498a9017d82a2277f
+      internalID: -2715851937896092315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NormalTilemapTest_Albedo1_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 45
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ae3f48bd0fa78240a47542762821178
+      internalID: 8883064719446516875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NormalTilemapTest_Albedo1_7
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 45
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfaf5556fd991d24092dd1f392505dc8
+      internalID: -6219734125664356262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NormalTilemapTest_Albedo1_8
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 45
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 754e8e7f15c6d674590484b472c4fce8
+      internalID: -4651309002874277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NormalTilemapTest_Albedo1_9
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 45
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd240f20d795a3c4fa8463bb908df272
+      internalID: -1540234997126163464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NormalTilemapTest_Albedo1_10
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 45
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6b0480da3baebd4ab8f18606ad9443b
+      internalID: 4388694354943476345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NormalTilemapTest_Albedo1_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 35
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea37720f93289f046870eb14e0777a8b
+      internalID: 1887299727217441455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NormalTilemapTest_Albedo1_12
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 35
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d93ca9f7f8bc79a4987ade2d60a8c78a
+      internalID: -5181359815168193114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NormalTilemapTest_Albedo1_13
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 35
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4b37f9b28d60aa43b24ce40bf8513ec
+      internalID: -1452772620953024974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NormalTilemapTest_Albedo1_14
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 35
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 619ca08e604c1d44d9651568986f3a8a
+      internalID: -1587620023634298950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NormalTilemapTest_Albedo1_15
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 35
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b245c34e20f82f4a83f4c3268d22da4
+      internalID: -660919474747913875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NormalTilemapTest_Albedo1_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 25
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28794e8e663d74241802161efedc22a2
+      internalID: 3534455675550574713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NormalTilemapTest_Albedo1_17
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 25
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b088b0d96241954384c7a5fda59e572
+      internalID: 2364569041634226996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NormalTilemapTest_Albedo1_18
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 25
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8d2b06965bd7ab4a92975d6c46aacb5
+      internalID: -6886742275824783818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NormalTilemapTest_Albedo1_19
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 25
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3fa8af66fb6e8947bda229d27489585
+      internalID: 2668035470660485388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NormalTilemapTest_Albedo1_20
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 25
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c4828bf994562e4091dc10fa45733d9
+      internalID: 2753060410153018549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NormalTilemapTest_Albedo1_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 15
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e19f6bcdbb79944bbd89d2f8ba64acd
+      internalID: -7959105969216495269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NormalTilemapTest_Albedo1_22
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 15
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27efb6591df4bb64494f54e67fca1784
+      internalID: -3468637383657621766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NormalTilemapTest_Albedo1_23
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 15
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1649eb4ab533cf84f8a2bdc8e2390f87
+      internalID: -6778173063995222611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NormalTilemapTest_Albedo1_24
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 15
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f9d8eea53f882f44a3bec13378098f4
+      internalID: -8338670686276468749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NormalTilemapTest_Albedo1_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a115f37fa58184447ba5f2d6b451be38
+      internalID: -5991415387985059507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NormalTilemapTest_Albedo1_26
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 5
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7612a8864d437443bd5dbbf698ce08e
+      internalID: 4803545162733353600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NormalTilemapTest_Albedo1_27
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 5
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c07791a74e7843469a60ea67f826f94
+      internalID: -4553874572365359825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NormalTilemapTest_Albedo1_28
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 5
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2b244e8cb974cd4995ae322c0e08032
+      internalID: 6105634773559924090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 43e13d097b903864a847bd5de9cd06eb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
