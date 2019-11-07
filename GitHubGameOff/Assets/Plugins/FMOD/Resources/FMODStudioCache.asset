@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: event:/GunShot
   guid: 85332e3221a7104c84d56f421f53be9e
   Banks:
-  - {fileID: 8169747626543296926}
+  - {fileID: 1339739180987373670}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -37,11 +37,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/FMODAssets/Desktop/MasterBank.strings.bank
   SubDir: 
-  lastModified: 637085813681337719
+  lastModified: 637085880314746261
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 984
+  Exists: 1
+--- !u!114 &-3485053516099146744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MasterBank.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMODAssets/Desktop/MasterBank.bank
+  SubDir: 
+  lastModified: 637085880313918468
+  LoadResult: 0
+  FileSizes: []
   Exists: 1
 --- !u!114 &-1538403820049824076
 MonoBehaviour:
@@ -60,7 +78,7 @@ MonoBehaviour:
   lastModified: 637085813680880820
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,18 +93,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -4435531036297683590}
-  - {fileID: -1538403820049824076}
-  - {fileID: 8169747626543296926}
+  - {fileID: -3485053516099146744}
+  - {fileID: 1339739180987373670}
   EditorEvents:
   - {fileID: -8876941760621769784}
   - {fileID: 8984884728159871647}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -1538403820049824076}
+  - {fileID: -3485053516099146744}
   StringsBanks:
   - {fileID: -4435531036297683590}
-  stringsBankWriteTime: 637085813681337719
+  stringsBankWriteTime: 637085880314746261
   cacheVersion: 3
+--- !u!114 &1339739180987373670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMODAssets/Desktop/SFX.bank
+  SubDir: 
+  lastModified: 637086505235691247
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &8169747626543296926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,7 +140,7 @@ MonoBehaviour:
   lastModified: 637086745810875726
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &8984884728159871647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,7 +156,7 @@ MonoBehaviour:
   Path: event:/Beach
   guid: 8b09495a1847974b93d4cf4e28d9cb5b
   Banks:
-  - {fileID: 8169747626543296926}
+  - {fileID: 1339739180987373670}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
