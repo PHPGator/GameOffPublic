@@ -1,4 +1,4 @@
-Shader "Toon/Lit StencilMask" {
+wShader "Toon/Lit StencilMask" {
 	Properties {
 		_Color ("Main Color", Color) = (0.5,0.5,0.5,1)
 		_MainTex ("Base (RGB)", 2D) = "white" {}
