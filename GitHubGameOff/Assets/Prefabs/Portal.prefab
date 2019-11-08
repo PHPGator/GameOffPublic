@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3039131338991178795}
   - component: {fileID: 3908984295767067306}
   m_Layer: 0
-  m_Name: Portal
+  m_Name: Portal Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,5 +120,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4619aa5c59402334d89770a2e063abba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dimController: {fileID: 4332258754905652585, guid: b628443f49b04e642bfdd46e00488d30,
+  dimController: {fileID: 344841764121598973, guid: a0a5426712653b54cad8d6ca8fc94fde,
     type: 3}

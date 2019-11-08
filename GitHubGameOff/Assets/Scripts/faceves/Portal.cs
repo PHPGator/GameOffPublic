@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Portal : MonoBehaviour
 {
-    private DimensionControllerTest dimController;
+    private DimensionController dimController;
     // Start is called before the first frame update
     void Start()
     {
         //grabs the current dimcontroller instance in the scene
-        dimController = GameObject.Find("DimensionControllerTest").GetComponent<DimensionControllerTest>();
+        dimController = GameObject.Find("DimensionController").GetComponent<DimensionController>();
     }
 
     // Update is called once per frame
@@ -20,7 +20,7 @@ public class Portal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!DimensionControllerTest.alternateDimensionOpen && other.gameObject.CompareTag("Player"))
+        if (!DimensionController.alternateDimensionOpen && other.gameObject.CompareTag("Player"))
         {
             dimController.startDimensionSwap();
             Debug.Log("triggered");
