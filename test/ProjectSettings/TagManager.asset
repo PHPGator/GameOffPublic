@@ -4,8 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Fire
-  - Debugging - Player Health
+  - Cam
   layers:
   - Default
   - TransparentFX
@@ -15,9 +14,9 @@ TagManager:
   - UI
   - 
   - 
-  - Ground
-  - DimensionA
-  - DimensionB
+  - Dimension A
+  - Dimension B
+  - 
   - 
   - 
   - 
