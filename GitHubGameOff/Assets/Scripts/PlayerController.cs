@@ -16,14 +16,19 @@ public class PlayerController : MonoBehaviour {
     public float checkRadius;
     public LayerMask whatIsGround;
 
+    private PlayerHealth pHealth;
+
     void Start() {
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+        pHealth = GetComponent<PlayerHealth>();
     }
 
     void Update() {
         PlayerFacingDirection();
+        pHealth.checkHealth();
+        PlayerDeath();
     }
 
     void FixedUpdate() {
@@ -49,7 +54,7 @@ public class PlayerController : MonoBehaviour {
 
     // Handle basic player jumping
     void PlayerJump() {
-        if(Input.GetKeyDown(KeyCode.UpArrow) && isGrounded) {
+        if(isGrounded && Input.GetKeyDown(KeyCode.UpArrow)) {
             anim.SetTrigger("IsJumpingStart");
             rb.velocity = Vector2.up * jumpForce;
         }
@@ -72,6 +77,12 @@ public class PlayerController : MonoBehaviour {
         else {
             anim.SetBool("IsRunning", true);
         }
+    }
+
+    public void PlayerDeath()
+    {
+        if(!pHealth.isAlive)
+            anim.SetBool("IsDead", true);
     }
 
 }
