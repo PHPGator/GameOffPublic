@@ -34,12 +34,21 @@ public class PlayerController : MonoBehaviour {
     void FixedUpdate() {
         PlayerGrounded();
         PlayerMovement();
+        PlayerAttck();
         PlayerJump();
     }
 
     // Check to see if the Physics2D game object attached to the players feet is touching any object set to the "ground" layer
     void PlayerGrounded() {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
+    }
+
+    // Simple function to trigger very basic swing attack.
+    void PlayerAttck() {
+		var canAttack = Input.GetKeyDown(KeyCode.LeftControl);
+		if(canAttack) {
+			anim.SetTrigger("New Trigger");
+		}
     }
 
     // Updates the player sprite facing direction depending on the direction its moving
