@@ -12,7 +12,7 @@ public class NewHook : MonoBehaviour
     private SpriteRenderer anchorSprite;
 
     public DistanceJoint2D playerJoint;
-    public PlayerController playerController;
+    public PlayerControllerImport playerController;
     private Vector2 playerPosition;
     private bool isChained;
 

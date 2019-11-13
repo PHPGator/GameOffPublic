@@ -11,7 +11,7 @@ public class Hook : MonoBehaviour
     private SpriteRenderer anchorSprite;
 
     public SpringJoint2D playerJoint;
-    public PlayerController playerController;
+    public PlayerControllerImport playerController;
     private Vector2 playerPosition;
     private bool isChained;
     private float aimMemory;
