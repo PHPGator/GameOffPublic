@@ -1,18 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class BaseState 
+public abstract class BaseState
 {
-    // Start is called before the first frame update
-    void Start()
+    protected GameObject gameObject;
+    protected Transform transform;
+
+    /** Input: GameObject
+     * Output: None
+     * Constructor takes in a gameobject and caches it into the base class to have
+     * it ready for use with other inherited states without affecting performance.
+     * Since it is abstract all the constructor is doing is caching the 2 fields, it
+     * can never be instantiated (with new).
+     **/
+    public BaseState(GameObject gameObject)
     {
-        
+        this.gameObject = gameObject;
+        this.transform = gameObject.transform;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public abstract Type Tick();
 }
+
+    
