@@ -11,7 +11,7 @@ public class Hook : MonoBehaviour
     private SpriteRenderer anchorSprite;
 
     public SpringJoint2D playerJoint;
-    public PlayerControllerImport playerController;
+    //public PlayerControllerImport playerController;
     private Vector2 playerPosition;
     private bool isChained;
     private float aimMemory;
@@ -24,6 +24,8 @@ public class Hook : MonoBehaviour
     public float chainLength;
     private List<Vector2> chainPositions = new List<Vector2>();
     private bool canHook;
+
+    private Vector3 realPos;
 
     //physical hook
     private Dictionary<Vector2, int> wrapPointsLookup = new Dictionary<Vector2, int>();
@@ -50,6 +52,9 @@ public class Hook : MonoBehaviour
     {
 
         Vector2 aimDirection = TakeAim();
+        //print(aimDirection);
+        realPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
+        print((Input.mousePosition.x - transform.position.x) + " " + (Input.mousePosition.y - transform.position.y + " Versus " + realPos ));
         HandleInput(aimDirection);
         UpdateHook();
         HandleRopeUnwrap();
@@ -314,7 +319,7 @@ public class Hook : MonoBehaviour
     {
         playerJoint.enabled = false;
         isChained = false;
-        playerController.isSwinging = false;
+        //playerController.isSwinging = false;
         chainRenderer.positionCount = 2;
         chainRenderer.SetPosition(0, transform.position);
         chainRenderer.SetPosition(1, transform.position);

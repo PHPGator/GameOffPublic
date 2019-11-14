@@ -6,7 +6,7 @@ public class AutoChain : MonoBehaviour
 {
     public GameObject chainPrefab;
 
-    private ChainObject co;
+    private GameObject co;
     private Rigidbody2D rb;
     private HingeJoint2D hj;
     private DistanceJoint2D dj;
@@ -24,7 +24,7 @@ public class AutoChain : MonoBehaviour
         dj = GetComponent<DistanceJoint2D>();
         tr = GetComponent<Transform>();
         sr = GetComponent<SpriteRenderer>();
-        co = GetComponent<ChainObject>();
+        co = GetComponent<GameObject>();
     }
 
     public void BootUp()
