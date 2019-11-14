@@ -12,13 +12,13 @@ public class ChaseState : BaseState
 
     public override Type Tick()
     {
-        if (enemy.Target == null)
+        if (enemy.target == null)
             return typeof(WanderState);
         //var direction = enemy.Target.transform.position - gameObject.transform.position;
-        gameObject.transform.LookAt(enemy.Target);
+        gameObject.transform.LookAt(enemy.target);
         gameObject.transform.Translate(Vector2.right * Time.deltaTime * StateMachineSettings.EnemySpeed);
 
-        float distance = Vector2.Distance(transform.position, enemy.Target.transform.position);
+        float distance = Vector2.Distance(transform.position, enemy.target.transform.position);
         if(distance <= StateMachineSettings.AttackRange)
         {
             return typeof(AttackState);

@@ -24,7 +24,7 @@ public class StateMachine : MonoBehaviour
     {
         if(currentState == null)
         {
-            currentState = availableStates[_initalStateType];
+            currentState = availableStates[initalStateType];
             //if the dictionary still returns null go to next frame
             if (currentState == null)
                 return;

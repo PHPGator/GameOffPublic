@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/** Class simulates a singleton pattern without actually declaring it**/
 public class StateMachineSettings : MonoBehaviour
 {
     [SerializeField] private float enemySpeed = 2f;
@@ -12,7 +13,7 @@ public class StateMachineSettings : MonoBehaviour
     public static float AttackRange => Instance.attackRange;
     public static GameObject EnemyProjectilePrefab => Instance.enemyProjectilePrefab;
 
-    public static StateMachineSettings Instance { get; private set; };
+    public static StateMachineSettings Instance { get; private set; }
     private void Awake()
     {
         if (Instance != null)

@@ -13,7 +13,7 @@ public class AttackState : BaseState
 
     public override Type Tick()
     {
-        if(enemy.Target == null)
+        if(enemy.target == null)
             return typeof(WanderState);
         attackReadyTimer -= Time.deltaTime;
         if(attackReadyTimer <= 0f)

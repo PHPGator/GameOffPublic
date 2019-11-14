@@ -5,7 +5,8 @@ using System.Collections.Generic;
 
 public class Enemy : MonoBehaviour
 {
-    private 
+    public Transform target { get; private set; }
+    public StateMachine StateMachine => GetComponent<StateMachine>(); 
     private Dictionary<Type, BaseState> availableStates; //cache the dictionary
     // Use this for initialization
     void Start()
@@ -19,16 +20,26 @@ public class Enemy : MonoBehaviour
 
     }
 
-    /**Input: Dictionary with the keys as the type of state (class) that the value will be storing (the actual created state) 
-     * Output: None
-     * SetStates caches the Dictionary for intermittent use.
-     **/
+    
 
     private void Awake()
     {
         InitializeStateMachine();
     }
 
+    public void SetTarget(Transform target)
+    {
+        this.target = target;
+    }
+
+    public void Attack()
+    {
+        Destroy(target.gameObject);
+    }
+    /**Input: Dictionary with the keys as the type of state (class) that the value will be storing (the actual created state) 
+     * Output: None
+     * SetStates caches the Dictionary for intermittent use.
+     **/
     private void InitializeStateMachine()
     {
         Type _initalStateType = typeof(WanderState); //choose which state to be the starting state
