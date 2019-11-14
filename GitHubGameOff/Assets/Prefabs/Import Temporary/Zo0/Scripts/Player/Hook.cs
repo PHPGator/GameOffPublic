@@ -54,7 +54,9 @@ public class Hook : MonoBehaviour
         Vector2 aimDirection = TakeAim();
         //print(aimDirection);
         realPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
-        print((Input.mousePosition.x - transform.position.x) + " " + (Input.mousePosition.y - transform.position.y + " Versus " + realPos ));
+        //print((Input.mousePosition.x) + " " + (Input.mousePosition.y + " Versus " + realPos ));
+        //print(GetComponent<Rigidbody2D>().transform.position);
+        //print (InputEx.mousePosition);
         HandleInput(aimDirection);
         UpdateHook();
         HandleRopeUnwrap();
