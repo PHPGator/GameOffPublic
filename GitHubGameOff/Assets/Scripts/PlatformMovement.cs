@@ -25,9 +25,9 @@ public class PlatformMovement : MonoBehaviour
     public bool startMovement = false;
 
     // Set the speed of platform movement
-    public float speed = 10.0f;
+    public float speed = 1.0f;
 
-    void Awake()
+    void Start()
     {
         // move target to sprites starting location to start
         target.transform.position = sprite.transform.position;
@@ -39,7 +39,7 @@ public class PlatformMovement : MonoBehaviour
     void Update()
     {
         // make sure platform follows target
-        sprite.transform.position = Vector2.Lerp(sprite.transform.position, target.transform.position, 0.5f * speed * Time.deltaTime);
+        sprite.transform.position = Vector2.MoveTowards(sprite.transform.position, target.transform.position, speed * Time.deltaTime);
     }
 
     IEnumerator StartMoving()
