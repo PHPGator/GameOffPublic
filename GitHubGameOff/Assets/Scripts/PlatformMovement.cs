@@ -36,6 +36,11 @@ public class PlatformMovement : MonoBehaviour
         StartCoroutine(StartMoving());
     }
 
+    void OnEnable()
+    {
+        StartCoroutine(StartMoving());
+    }
+
     void Update()
     {
         // make sure platform follows target

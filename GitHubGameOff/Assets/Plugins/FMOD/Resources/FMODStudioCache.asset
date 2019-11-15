@@ -97,7 +97,7 @@ MonoBehaviour:
   Path: event:/GunShot
   guid: 85332e3221a7104c84d56f421f53be9e
   Banks:
-  - {fileID: 4762617912467554955}
+  - {fileID: 82177059277497346}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -254,18 +254,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 8924872240240175933}
-  - {fileID: 4891187209475798361}
-  - {fileID: 4762617912467554955}
+  - {fileID: 3788828267872125262}
+  - {fileID: 82177059277497346}
   EditorEvents:
   - {fileID: -5459204585697412475}
   - {fileID: 1692371406409268967}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 4891187209475798361}
+  - {fileID: 3788828267872125262}
   StringsBanks:
   - {fileID: 8924872240240175933}
-  stringsBankWriteTime: 637092006618371503
+  stringsBankWriteTime: 637085813681337719
   cacheVersion: 3
+--- !u!114 &82177059277497346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMODAssets/Desktop/SFX.bank
+  SubDir: 
+  lastModified: 637086745810875726
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &1339739180987373670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,7 +317,7 @@ MonoBehaviour:
   Path: event:/Beach
   guid: 8b09495a1847974b93d4cf4e28d9cb5b
   Banks:
-  - {fileID: 4762617912467554955}
+  - {fileID: 82177059277497346}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -325,6 +343,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &3788828267872125262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MasterBank.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMODAssets/Desktop/MasterBank.bank
+  SubDir: 
+  lastModified: 637085813680880820
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &4011441734025738454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,7 +447,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/FMODAssets/Desktop/MasterBank.strings.bank
   SubDir: 
-  lastModified: 637092006618371503
+  lastModified: 637085813681337719
   LoadResult: 0
   FileSizes:
   - Name: Desktop
