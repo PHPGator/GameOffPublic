@@ -11,7 +11,6 @@ public class Hook : MonoBehaviour
     private SpriteRenderer anchorSprite;
 
     public SpringJoint2D playerJoint;
-    //public PlayerControllerImport playerController;
     private Vector2 playerPosition;
     private bool isChained;
     private float aimMemory;
@@ -24,9 +23,7 @@ public class Hook : MonoBehaviour
     public float chainLength;
     private List<Vector2> chainPositions = new List<Vector2>();
     private bool canHook;
-
-    private Vector3 realPos;
-
+    
     //physical hook
     private Dictionary<Vector2, int> wrapPointsLookup = new Dictionary<Vector2, int>();
     
@@ -34,8 +31,8 @@ public class Hook : MonoBehaviour
     {
         
         playerJoint.enabled = false;
-        playerJoint.frequency = 1;
-        playerJoint.dampingRatio = 0.005f;
+        //playerJoint.frequency = 1;
+        //playerJoint.dampingRatio = 0.1f;
         playerPosition = transform.position;
         anchorRB = anchorPoint.GetComponent<Rigidbody2D>();
         anchorSprite = anchorPoint.GetComponent<SpriteRenderer>();
@@ -52,14 +49,13 @@ public class Hook : MonoBehaviour
     {
 
         Vector2 aimDirection = TakeAim();
-        //print(aimDirection);
-        realPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
-        //print((Input.mousePosition.x) + " " + (Input.mousePosition.y + " Versus " + realPos ));
-        //print(GetComponent<Rigidbody2D>().transform.position);
-        //print (InputEx.mousePosition);
         HandleInput(aimDirection);
         UpdateHook();
         HandleRopeUnwrap();
+        //var PosTest = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 6f));
+        //var tempPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f);
+        //var TestPos = GetComponent<Transform>().position;
+        //print(PosTest + "Is made from: " + tempPos + " Compare " + TestPos);
     }
 
     private void SetTargetPosition(float aimAngle, float distance)
@@ -125,7 +121,7 @@ public class Hook : MonoBehaviour
 
         //Aim with mouse
         var worldMousePosition =
-        Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
+        Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f));
         var facingDirection = worldMousePosition - transform.position;
         var aimAngle = Mathf.Atan2(facingDirection.y, facingDirection.x);
         if (aimAngle < 0f)
@@ -186,19 +182,23 @@ public class Hook : MonoBehaviour
         }
 
         //hook grappling force
-        if (aimMemory * Mathf.Rad2Deg > 45 && aimMemory * Mathf.Rad2Deg < 135)
+        //up
+        if (aimMemory * Mathf.Rad2Deg > 25 && aimMemory * Mathf.Rad2Deg < 155)
         {
             playerJoint.distance *= 0.99f;
-        }else if (aimMemory * Mathf.Rad2Deg > 225 && aimMemory * Mathf.Rad2Deg < 315)
+        }
+        //down
+        else if (aimMemory * Mathf.Rad2Deg > 225 && aimMemory * Mathf.Rad2Deg < 315)
         {
 
             playerJoint.distance *= 0.2f;
         }
+        //sideways
         else
         {
 
             playerJoint.distance *= 0.9f;
-            anchorPoint.transform.parent.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 1f), ForceMode2D.Impulse);
+            //anchorPoint.transform.parent.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 1f), ForceMode2D.Impulse);
         }
 
         //find the correct position
@@ -321,7 +321,6 @@ public class Hook : MonoBehaviour
     {
         playerJoint.enabled = false;
         isChained = false;
-        //playerController.isSwinging = false;
         chainRenderer.positionCount = 2;
         chainRenderer.SetPosition(0, transform.position);
         chainRenderer.SetPosition(1, transform.position);

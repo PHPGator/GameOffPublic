@@ -5,7 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
     public float speed;
     public float jumpForce;
+    public float maxSpeed;
     private float moveInput;
+    private int face = 1;
 
     private SpriteRenderer sr;
     private Rigidbody2D rb;
@@ -79,8 +81,21 @@ public class PlayerController : MonoBehaviour {
     // In the future if we want more snappy movement we can replace GetAxis with GetAxisRaw
     void PlayerMovement() {
         moveInput = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
-        if(moveInput == 0) {
+        //rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+
+        rb.AddRelativeForce(new Vector2(moveInput, 0f), ForceMode2D.Impulse);
+
+        if (moveInput == 0)
+        {
+
+            rb.AddRelativeForce(new Vector2((-rb.velocity.x/3), 0f), ForceMode2D.Impulse);
+        }
+        if (rb.velocity.sqrMagnitude > maxSpeed * maxSpeed)
+        {
+
+            rb.velocity *= 0.9f;
+        }
+        if (moveInput == 0) {
             anim.SetBool("IsRunning", false);
         }
         else {

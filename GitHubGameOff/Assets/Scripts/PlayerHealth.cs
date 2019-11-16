@@ -14,7 +14,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
-        playerHealthText = GameObject.FindWithTag("Debugging - Player Health").GetComponent<TextMeshProUGUI>();
+        //playerHealthText = GameObject.FindWithTag("Debugging - Player Health").GetComponent<TextMeshProUGUI>();
         checkHealth();
         //decreaseHealth(200.0f);
     }
@@ -51,7 +51,7 @@ public class PlayerHealth : MonoBehaviour
         // if debugging, go ahead and update UI
         if (debugging)
         {
-            playerHealthText.text = "Player Health: " + playerHealth.ToString();
+            //playerHealthText.text = "Player Health: " + playerHealth.ToString();
         }
     }
 }
