@@ -4,16 +4,25 @@ using System;
 
 public class WanderState : BaseState
 {
-    private Vector2 destination;
     private Vector2 direction;
-    private float stopDistance = 1f;
+    private Vector2 destination;
+    private Vector2 distanceOffset;
+    private readonly Vector2 originalPosition; //const value at run time
+
     private float rayDistance = 3.5f;
-    private readonly LayerMask layerMask = LayerMask.NameToLayer("Walls");
+    private readonly LayerMask layerMask; 
     private Enemy enemy;
-    private float desiredRotation;
+
+    /** Constructor caches enemy and stores the gameobject into the base class **/
     public WanderState(Enemy enemy) : base(enemy.gameObject)
     {
         this.enemy = enemy;
+        direction = transform.right.normalized; // initialize direction to the standard right x axis
+        originalPosition = transform.position;
+        distanceOffset = new Vector2(StateMachineSettings.DistanceRange, 0);
+        destination = originalPosition + distanceOffset;
+        layerMask = LayerMask.NameToLayer("Ground");
+        Debug.Log("Original: " + originalPosition.ToString());
     }
     public override Type Tick()
     {
@@ -23,41 +32,48 @@ public class WanderState : BaseState
             enemy.SetTarget(chaseTarget);
             return typeof(ChaseState);
         }
+
+        float step = StateMachineSettings.EnemySpeed * Time.deltaTime;
+        transform.position = Vector2.MoveTowards(transform.position, destination, step);
+        Debug.Log("Dest: " + destination.ToString());
+        if (Vector2.Distance(transform.position, destination) <= 0
+            || IsPathBlocked())
+        {
+            FlipDirection();
+            GrabNewDestination();
+        }
         /**
-        if(destination.HasValue == false ||
-            Vector3.Distance(transform.position, destination.Value) <= stopDistance)
-        {
-            FindRandomDestination();
-        }
-    
-        transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, Time.deltaTime * turnSpeed);
-        if (IsForwardBlocked())
-        {
-            transform.rotation = Quaternion.Lerp(transform.rotation, desiredRotation, .2f);
-        }
         else
-        {
-            transform.Translate(Vector3.forward * Time.deltaTime * StateMachineSettings.EnemySpeed);
-        }
-    **/
-        Debug.DrawRay(transform.position, direction * rayDistance, Color.red);
+            transform.Translate(Vector2.right * Time.deltaTime * StateMachineSettings.EnemySpeed);
+        **/
+        Debug.DrawRay(transform.position, direction * rayDistance, Color.green);
+
+        /**
         while (IsPathBlocked())
         {
             Debug.Log("Path blocked");
-            FindRandomDestination();
-            
+            FlipDirection();
         }
-
+        **/
         
-        //implement wander range code (insert here)
+        
+
         return null;
     }
-
-    private bool IsForwardBlocked()
+    
+    private void FlipDirection()
     {
-        Ray ray = new Ray(transform.position, transform.forward);
-        return Physics.SphereCast(ray, .5f, rayDistance, layerMask);
+        direction = -direction;
+        enemy.FlipEnemySprite();
+        //transform.right = -transform.right; // transform.right = target.position - transfrom.position
+        Debug.Log("Flipped: " + direction.ToString());
     }
+    private void GrabNewDestination()
+    {
+        destination = originalPosition + (distanceOffset * direction);
+
+    }
+    
 
     private bool IsPathBlocked()
     {
@@ -65,40 +81,32 @@ public class WanderState : BaseState
         return Physics.SphereCast(ray, .5f, rayDistance, layerMask);
     }
 
-    private void FindRandomDestination()
-    {
-        Vector3 testPosition = (transform.position + (transform.right * 4f))
-            + new Vector3(UnityEngine.Random.Range(-4.5f,4.5f),0f, UnityEngine.Random.Range(-4.5f, 4.5f));
-        destination = new Vector3(testPosition.x, 1f, testPosition.z);
-        //direction = Vector3.Normalize(destination.Value - transform.position);
-        //direction = new Vector3(direction.x, 0f, direction.z);
-        //desiredRotation = Quaternion.LookRotation(direction);
-        Debug.Log("Got Direction");
-    }
+    
 
-    //Quaternion startingAngle = Quaternion.AngleAxis(-60f, Vector3.up);
-    //Quaternion stepAngle = Quaternion.AngleAxis(5f, Vector3.up);
+    
     private Transform CheckForAggro()
     {
-        RaycastHit hit;
-        //var angle = transform.rotation * startingAngle;
-        //var direction = angle * Vector2.right;
-        var pos = transform.position;
+        RaycastHit2D hit;
+        float colliderRadius = gameObject.GetComponent<BoxCollider2D>().size.x / 2;
+        var rayStartingPos = transform.position + (new Vector3(colliderRadius + .01f,0, 0) * direction.x);
 
-        for(int i =0; i < 24; i++)
-        {
-            if(Physics.Raycast(pos, direction, out hit, StateMachineSettings.AggroRadius))
+        //for(int i =0; i < 24; i++)
+        // {
+        hit = Physics2D.Raycast(rayStartingPos, direction, StateMachineSettings.AggroRadius);
+        if (hit.collider != null)   
             {
+                Debug.Log("Got HIT");
                 GameObject targetObject = hit.collider.gameObject;
                 if (targetObject != null && targetObject.CompareTag("Player"))
                 {
-                    Debug.DrawRay(pos, direction * hit.distance, Color.red);
+                Debug.Log("Got HIT player");
+                Debug.DrawRay(rayStartingPos, direction * hit.distance, Color.red);
                     return targetObject.transform;
                 }
                 else
-                    Debug.DrawRay(pos, direction * hit.distance, Color.yellow);
+                    Debug.DrawRay(rayStartingPos, direction * hit.distance, Color.yellow);
             }
-        }
-        return null; ;
+       // }
+        return null; 
     }
 }

@@ -6,12 +6,17 @@ using System.Collections.Generic;
 public class Enemy : MonoBehaviour
 {
     public Transform target { get; private set; }
-    public StateMachine StateMachine => GetComponent<StateMachine>(); 
+    public StateMachine StateMachine => GetComponent<StateMachine>();
+    private SpriteRenderer sr;
     private Dictionary<Type, BaseState> availableStates; //cache the dictionary
+
+    
+
     // Use this for initialization
     void Start()
     {
-
+        sr = GetComponent<SpriteRenderer>();
+        InitializeStateMachine();
     }
 
     // Update is called once per frame
@@ -20,11 +25,15 @@ public class Enemy : MonoBehaviour
 
     }
 
-    
+    public void FlipEnemySprite()
+    {
+        sr.flipX = !sr.flipX;    
+    }
+
 
     private void Awake()
     {
-        InitializeStateMachine();
+        //InitializeStateMachine();
     }
 
     public void SetTarget(Transform target)

@@ -9,6 +9,7 @@ public class AttackState : BaseState
     public AttackState(Enemy enemy):base(enemy.gameObject)
     {
         this.enemy = enemy;
+        attackReadyTimer = .5f;
     }
 
     public override Type Tick()

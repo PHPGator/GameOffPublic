@@ -27,11 +27,15 @@ public class StateMachine : MonoBehaviour
             currentState = availableStates[initalStateType];
             //if the dictionary still returns null go to next frame
             if (currentState == null)
+            {
+                Debug.LogError("initialStateTyoe does not exist!");
                 return;
+            }
+                
         }
 
         Type nextStateType = currentState.Tick();
-
+        //Debug.Log("currentstate: " + currentState + "\t nextstate: " + nextStateType);
         if (nextStateType != null && 
             nextStateType != currentState.GetType())
         {
@@ -42,8 +46,9 @@ public class StateMachine : MonoBehaviour
 
     private void SwitchToNextState(Type nextState)
     {
+        Debug.Log("currentstate: " + currentState + "\t nextstate: " + nextState);
         currentState = availableStates[nextState];
-        OnStateChanged.Invoke(currentState);
+        //OnStateChanged.Invoke(currentState);
     }
 
     /**Input: Generic Type that flags which class type will be the starting state

@@ -14,9 +14,9 @@ public class ChaseState : BaseState
     {
         if (enemy.target == null)
             return typeof(WanderState);
-        //var direction = enemy.Target.transform.position - gameObject.transform.position;
-        gameObject.transform.LookAt(enemy.target);
-        gameObject.transform.Translate(Vector2.right * Time.deltaTime * StateMachineSettings.EnemySpeed);
+        var direction = (enemy.target.transform.position - transform.position).normalized;
+        //gameObject.transform.LookAt(enemy.target);  transform.right = direction;
+        transform.Translate(Vector2.right * direction * Time.deltaTime * StateMachineSettings.EnemySpeed);
 
         float distance = Vector2.Distance(transform.position, enemy.target.transform.position);
         if(distance <= StateMachineSettings.AttackRange)
