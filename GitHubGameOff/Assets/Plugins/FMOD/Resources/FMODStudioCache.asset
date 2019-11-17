@@ -59,6 +59,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-7633796443456375466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMODAssets/Desktop/SFX.bank
+  SubDir: 
+  lastModified: 637086238068018231
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-5843445142926035283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,7 +115,11 @@ MonoBehaviour:
   Path: event:/GunShot
   guid: 85332e3221a7104c84d56f421f53be9e
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 8379688971923649960}
+=======
+  - {fileID: -7633796443456375466}
+>>>>>>> Stashed changes
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -204,6 +226,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2606
+--- !u!114 &-2929697603869227319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MasterBank.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMODAssets/Desktop/MasterBank.bank
+  SubDir: 
+  lastModified: 637086238067708179
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-1538403820049824076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,17 +312,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 8924872240240175933}
+<<<<<<< Updated upstream
   - {fileID: -1469863443266989194}
   - {fileID: 8379688971923649960}
+=======
+  - {fileID: -2929697603869227319}
+  - {fileID: -7633796443456375466}
+>>>>>>> Stashed changes
   EditorEvents:
   - {fileID: -5459204585697412475}
   - {fileID: 1692371406409268967}
   EditorParameters: []
   MasterBanks:
+<<<<<<< Updated upstream
   - {fileID: -1469863443266989194}
   StringsBanks:
   - {fileID: 8924872240240175933}
   stringsBankWriteTime: 637085454632492476
+=======
+  - {fileID: -2929697603869227319}
+  StringsBanks:
+  - {fileID: 8924872240240175933}
+  stringsBankWriteTime: 637086238067718108
+>>>>>>> Stashed changes
   cacheVersion: 3
 --- !u!114 &82177059277497346
 MonoBehaviour:
@@ -335,7 +387,11 @@ MonoBehaviour:
   Path: event:/Beach
   guid: 8b09495a1847974b93d4cf4e28d9cb5b
   Banks:
+<<<<<<< Updated upstream
   - {fileID: 8379688971923649960}
+=======
+  - {fileID: -7633796443456375466}
+>>>>>>> Stashed changes
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -501,7 +557,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/FMODAssets/Desktop/MasterBank.strings.bank
   SubDir: 
+<<<<<<< Updated upstream
   lastModified: 637085454632492476
+=======
+  lastModified: 637086238067718108
+>>>>>>> Stashed changes
   LoadResult: 0
   FileSizes:
   - Name: Desktop

@@ -9,27 +9,26 @@ public class Enemy : MonoBehaviour
     public StateMachine StateMachine => GetComponent<StateMachine>();
     private SpriteRenderer sr;
     private Dictionary<Type, BaseState> availableStates; //cache the dictionary
-
-    
+    private Health health;
 
     // Use this for initialization
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
+        health = GetComponent<Health>();
         InitializeStateMachine();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        health.checkHealth();
     }
 
     public void FlipEnemySprite()
     {
         sr.flipX = !sr.flipX;    
     }
-
 
     private void Awake()
     {
