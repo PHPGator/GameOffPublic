@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 259037966}
   - component: {fileID: 259037965}
   - component: {fileID: 259037964}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Shet
   m_TagString: Hooked
   m_Icon: {fileID: 0}

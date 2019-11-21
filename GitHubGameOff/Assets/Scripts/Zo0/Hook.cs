@@ -56,7 +56,7 @@ public class Hook : MonoBehaviour
         HandleInput(aimDirection);
         UpdateHook();
         HandleRopeUnwrap();
-        //playerJoint.frequency = 1f - chainDistance/chainLength;
+        //playerJoint.frequency = 0f + chainDistance/chainLength;
         //playerJoint.dampingRatio = 0.1f;
         //var PosTest = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 6f));
         //var tempPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f);
@@ -74,7 +74,7 @@ public class Hook : MonoBehaviour
         var x = transform.position.x + distance * Mathf.Cos(aimAngle);
         var y = transform.position.y + distance * Mathf.Sin(aimAngle);
 
-        var targetPosition = new Vector3(x, y, 0);
+        var targetPosition = new Vector3(x, y, 10f);
         target.transform.position = targetPosition;
     }
 
@@ -165,7 +165,7 @@ public class Hook : MonoBehaviour
         {
             targetSprite.enabled = false;
 
-            //rope feels a bit more realistic
+            //hook feels a bit more realistic
             
             if (chainPositions.Count > 0)
             {
@@ -239,6 +239,9 @@ public class Hook : MonoBehaviour
         //find the correct position
         if (!isPulled)
         {
+
+            playerJoint.frequency = chainDistance/chainLength;
+            print(playerJoint.frequency = chainDistance / chainLength);
 
             chainRenderer.positionCount = chainPositions.Count + 1;
 

@@ -71,7 +71,8 @@ public class PlayerController : MonoBehaviour {
     void PlayerJump() {
         if(isGrounded && Input.GetButton("Jump")) {
             anim.SetTrigger("IsJumpingStart");
-            rb.velocity += Vector2.up * jumpForce;
+            rb.velocity = new Vector2 (rb.velocity.x, jumpForce);
+            //rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
         else if(isGrounded) {
             anim.SetBool("IsJumpingEnd", false);

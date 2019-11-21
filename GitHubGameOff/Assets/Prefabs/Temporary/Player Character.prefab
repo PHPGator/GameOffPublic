@@ -69,7 +69,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -308,6 +308,8 @@ MonoBehaviour:
   speed: 10
   jumpForce: 9
   maxSpeed: 5
+  fallModifier: 1
+  jumpModifier: 4
   groundCheck: {fileID: 7095898776517303014}
   checkRadius: 0.5
   whatIsGround:
@@ -350,7 +352,7 @@ MonoBehaviour:
   chainLayerMask:
     serializedVersion: 2
     m_Bits: 2304
-  chainLength: 10
+  chainLength: 5
 --- !u!50 &7095898776061108796
 Rigidbody2D:
   serializedVersion: 4
@@ -417,7 +419,7 @@ SpringJoint2D:
   m_AutoConfigureDistance: 0
   m_Distance: 0.005
   m_DampingRatio: 1
-  m_Frequency: 1
+  m_Frequency: 2
 --- !u!232 &8670789037983044664
 DistanceJoint2D:
   m_ObjectHideFlags: 0
@@ -557,7 +559,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7095898776517303015}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.033, y: -0.124, z: -183.19978}
+  m_LocalPosition: {x: 0.033, y: -0.124, z: 0}
   m_LocalScale: {x: 0.227825, y: 0.227825, z: 0.227825}
   m_Children: []
   m_Father: {fileID: 7095898776061108797}
