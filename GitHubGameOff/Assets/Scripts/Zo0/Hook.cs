@@ -115,11 +115,11 @@ public class Hook : MonoBehaviour
 
                         playerJoint.distance = chainDistance;
                         playerJoint.enabled = true;
+                        anchorSprite.enabled = true;
                     }
 
-                    
-                    
-                    anchorSprite.enabled = true;
+
+
                 }
             }
 

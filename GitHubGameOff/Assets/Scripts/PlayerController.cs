@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour {
     private float moveInput;
     private int face = 1;
 
+    public float fallModifier = 1f;
+    public float jumpModifier = 4f;
+
     private SpriteRenderer sr;
     private Rigidbody2D rb;
     private Animator anim;
@@ -31,6 +34,7 @@ public class PlayerController : MonoBehaviour {
         PlayerFacingDirection();
         pHealth.checkHealth();
         PlayerDeath();
+        PlayerDescent();
     }
 
     void FixedUpdate() {
@@ -65,9 +69,9 @@ public class PlayerController : MonoBehaviour {
 
     // Handle basic player jumping
     void PlayerJump() {
-        if(isGrounded && Input.GetKeyDown(KeyCode.UpArrow)) {
+        if(isGrounded && Input.GetButton("Jump")) {
             anim.SetTrigger("IsJumpingStart");
-            rb.velocity = Vector2.up * jumpForce;
+            rb.velocity += Vector2.up * jumpForce;
         }
         else if(isGrounded) {
             anim.SetBool("IsJumpingEnd", false);
@@ -107,6 +111,21 @@ public class PlayerController : MonoBehaviour {
     {
         if(!pHealth.isAlive)
             anim.SetBool("IsDead", true);
+    }
+
+    private void PlayerDescent()
+    {
+
+        if (rb.velocity.y < 0)
+        {
+
+            rb.velocity += Vector2.up * Physics2D.gravity.y * (fallModifier - 1) * Time.deltaTime;
+        }
+        else if (rb.velocity.y > 0 && !Input.GetButton("Jump"))
+        {
+
+            rb.velocity += Vector2.up * Physics2D.gravity.y * (jumpModifier - 1) * Time.deltaTime;
+        }
     }
 
 }
