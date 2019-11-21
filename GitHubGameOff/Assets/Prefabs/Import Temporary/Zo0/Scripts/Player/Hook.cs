@@ -237,54 +237,62 @@ public class Hook : MonoBehaviour
         }
 
         //find the correct position
-        chainRenderer.positionCount = chainPositions.Count + 1;
-        
-        for (var i = chainRenderer.positionCount - 1; i >= 0; i--)
+        if (!isPulled)
         {
-            if (i != chainRenderer.positionCount - 1)
-            {
-                chainRenderer.SetPosition(i, chainPositions[i]);
 
-                //set anchor
-                if (i == chainPositions.Count - 1 || chainPositions.Count == 1)
-                {
-                    var tempChainPosition = chainPositions[chainPositions.Count - 1];
-                    if (chainPositions.Count == 1)
-                    {
-                        anchorRB.transform.position = tempChainPosition;
-                        if (!canHook)
-                        {
-                            playerJoint.distance = Vector2.Distance(transform.position, tempChainPosition);
-                            canHook = true;
-                        }
-                    }
-                    else
-                    {
-                        anchorRB.transform.position = tempChainPosition;
-                        if (!canHook)
-                        {
-                            playerJoint.distance = Vector2.Distance(transform.position, tempChainPosition);
-                            canHook = true;
-                        }
-                    }
-                }
-                // fixes some strange behaviours
-                else if (i - 1 == chainPositions.IndexOf(chainPositions.Last()))
-                {
-                    var tempChainPosition = chainPositions.Last();
-                    anchorRB.transform.position = tempChainPosition;
-                    if (!canHook)
-                    {
-                        playerJoint.distance = Vector2.Distance(transform.position, tempChainPosition);
-                        canHook = true;
-                    }
-                }
-            }
-            else
+            chainRenderer.positionCount = chainPositions.Count + 1;
+
+            for (var i = chainRenderer.positionCount - 1; i >= 0; i--)
             {
-                // yay
-                chainRenderer.SetPosition(i, transform.position);
+                if (i != chainRenderer.positionCount - 1)
+                {
+                    chainRenderer.SetPosition(i, chainPositions[i]);
+
+                    //set anchor
+                    if (i == chainPositions.Count - 1 || chainPositions.Count == 1)
+                    {
+                        var tempChainPosition = chainPositions[chainPositions.Count - 1];
+                        if (chainPositions.Count == 1)
+                        {
+                            anchorRB.transform.position = tempChainPosition;
+                            if (!canHook)
+                            {
+                                playerJoint.distance = Vector2.Distance(transform.position, tempChainPosition);
+                                canHook = true;
+                            }
+                        }
+                        else
+                        {
+                            anchorRB.transform.position = tempChainPosition;
+                            if (!canHook)
+                            {
+                                playerJoint.distance = Vector2.Distance(transform.position, tempChainPosition);
+                                canHook = true;
+                            }
+                        }
+                    }
+                    // fixes some strange behaviours
+                    else if (i - 1 == chainPositions.IndexOf(chainPositions.Last()))
+                    {
+                        var tempChainPosition = chainPositions.Last();
+                        anchorRB.transform.position = tempChainPosition;
+                        if (!canHook)
+                        {
+                            playerJoint.distance = Vector2.Distance(transform.position, tempChainPosition);
+                            canHook = true;
+                        }
+                    }
+                }
+                else
+                {
+                    // yay
+                    chainRenderer.SetPosition(i, transform.position);
+                }
             }
+        }
+        else
+        {
+
         }
     }
 
