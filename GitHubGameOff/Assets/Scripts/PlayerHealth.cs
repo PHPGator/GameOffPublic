@@ -51,7 +51,7 @@ public class PlayerHealth : MonoBehaviour
         // if debugging, go ahead and update UI
         if (debugging)
         {
-            playerHealthText.text = "Player Health: " + playerHealth.ToString();
+            //playerHealthText.text = "Player Health: " + playerHealth.ToString();
         }
     }
 }

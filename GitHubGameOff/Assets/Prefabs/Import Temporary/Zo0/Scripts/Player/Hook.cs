@@ -11,9 +11,10 @@ public class Hook : MonoBehaviour
     private SpriteRenderer anchorSprite;
 
     public SpringJoint2D playerJoint;
-    //public PlayerControllerImport playerController;
+    public DistanceJoint2D pullJoint;
     private Vector2 playerPosition;
     private bool isChained;
+    private bool isPulled;
     private float aimMemory;
 
     public Transform target;
@@ -24,18 +25,18 @@ public class Hook : MonoBehaviour
     public float chainLength;
     private List<Vector2> chainPositions = new List<Vector2>();
     private bool canHook;
-
-    private Vector3 realPos;
-
+    private float chainDistance;
+    
     //physical hook
     private Dictionary<Vector2, int> wrapPointsLookup = new Dictionary<Vector2, int>();
     
     void Awake()
     {
-        
+
+        chainDistance = 0f;
         playerJoint.enabled = false;
-        playerJoint.frequency = 1;
-        playerJoint.dampingRatio = 0.005f;
+        //playerJoint.frequency = 1;
+        //playerJoint.dampingRatio = 0.0f;
         playerPosition = transform.position;
         anchorRB = anchorPoint.GetComponent<Rigidbody2D>();
         anchorSprite = anchorPoint.GetComponent<SpriteRenderer>();
@@ -52,12 +53,15 @@ public class Hook : MonoBehaviour
     {
 
         Vector2 aimDirection = TakeAim();
-        //print(aimDirection);
-        realPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
-        print((Input.mousePosition.x - transform.position.x) + " " + (Input.mousePosition.y - transform.position.y + " Versus " + realPos ));
         HandleInput(aimDirection);
         UpdateHook();
         HandleRopeUnwrap();
+        //playerJoint.frequency = 1f - chainDistance/chainLength;
+        //playerJoint.dampingRatio = 0.1f;
+        //var PosTest = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 6f));
+        //var tempPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f);
+        //var TestPos = GetComponent<Transform>().position;
+        //print(PosTest + "Is made from: " + tempPos + " Compare " + TestPos);
     }
 
     private void SetTargetPosition(float aimAngle, float distance)
@@ -91,25 +95,42 @@ public class Hook : MonoBehaviour
                 if (!chainPositions.Contains(hit.point))
                 {
 
-                    //Jump slightly after successful hook(or not lol)
-                    //transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 0f), ForceMode2D.Impulse);
+                    chainPositions.Add(hit.point);
+                    chainDistance = Vector2.Distance(playerPosition, hit.point);
 
                     //grappling hook force
                     Vector2 redline = hit.point - playerPosition;
                     aimMemory = Mathf.Atan2(redline.y, redline.x);
 
-                    chainPositions.Add(hit.point);
-                    playerJoint.distance = Vector2.Distance(playerPosition, hit.point);
-                    playerJoint.enabled = true;
+                    if (hit.transform.gameObject.tag == "Hooked")
+                    {
+
+                        pullJoint.connectedBody = hit.rigidbody;
+                        pullJoint.distance = chainDistance;
+                        pullJoint.enabled = true;
+                        isPulled = true;
+                    }
+                    else
+                    {
+
+                        playerJoint.distance = chainDistance;
+                        playerJoint.enabled = true;
+                    }
+
+                    
+                    
                     anchorSprite.enabled = true;
                 }
             }
 
             else
             {
+                isPulled = false;
                 chainRenderer.enabled = false;
                 isChained = false;
                 playerJoint.enabled = false;
+                pullJoint.enabled = false;
+                pullJoint.connectedBody = null;
             }
         }else if (!Input.GetMouseButton(0))
         {
@@ -123,7 +144,7 @@ public class Hook : MonoBehaviour
 
         //Aim with mouse
         var worldMousePosition =
-        Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
+        Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f));
         var facingDirection = worldMousePosition - transform.position;
         var aimAngle = Mathf.Atan2(facingDirection.y, facingDirection.x);
         if (aimAngle < 0f)
@@ -183,71 +204,95 @@ public class Hook : MonoBehaviour
             return;
         }
 
-        //hook grappling force
-        if (aimMemory * Mathf.Rad2Deg > 45 && aimMemory * Mathf.Rad2Deg < 135)
-        {
-            playerJoint.distance *= 0.99f;
-        }else if (aimMemory * Mathf.Rad2Deg > 225 && aimMemory * Mathf.Rad2Deg < 315)
+        //scorpion pull
+        if (isPulled && pullJoint.distance > 1)
         {
 
-            playerJoint.distance *= 0.2f;
+            pullJoint.distance *= 0.9f;
+        }
+
+        //hook grappling force
+        //turned off for now
+        if (playerJoint.distance > 1f && false)
+        {
+
+            //up
+            if (aimMemory * Mathf.Rad2Deg > 25 && aimMemory * Mathf.Rad2Deg < 155)
+            {
+                playerJoint.distance *= 0.999f;
+            }
+            //down
+            else if (aimMemory * Mathf.Rad2Deg > 225 && aimMemory * Mathf.Rad2Deg < 315)
+            {
+
+                playerJoint.distance *= 0.5f;
+            }
+            //sideways
+            else
+            {
+
+                playerJoint.distance *= 0.99f;
+                //anchorPoint.transform.parent.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 1f), ForceMode2D.Impulse);
+            }
+        }
+
+        //find the correct position
+        if (!isPulled)
+        {
+
+            chainRenderer.positionCount = chainPositions.Count + 1;
+
+            for (var i = chainRenderer.positionCount - 1; i >= 0; i--)
+            {
+                if (i != chainRenderer.positionCount - 1)
+                {
+                    chainRenderer.SetPosition(i, chainPositions[i]);
+
+                    //set anchor
+                    if (i == chainPositions.Count - 1 || chainPositions.Count == 1)
+                    {
+                        var tempChainPosition = chainPositions[chainPositions.Count - 1];
+                        if (chainPositions.Count == 1)
+                        {
+                            anchorRB.transform.position = tempChainPosition;
+                            if (!canHook)
+                            {
+                                playerJoint.distance = Vector2.Distance(transform.position, tempChainPosition);
+                                canHook = true;
+                            }
+                        }
+                        else
+                        {
+                            anchorRB.transform.position = tempChainPosition;
+                            if (!canHook)
+                            {
+                                playerJoint.distance = Vector2.Distance(transform.position, tempChainPosition);
+                                canHook = true;
+                            }
+                        }
+                    }
+                    // fixes some strange behaviours
+                    else if (i - 1 == chainPositions.IndexOf(chainPositions.Last()))
+                    {
+                        var tempChainPosition = chainPositions.Last();
+                        anchorRB.transform.position = tempChainPosition;
+                        if (!canHook)
+                        {
+                            playerJoint.distance = Vector2.Distance(transform.position, tempChainPosition);
+                            canHook = true;
+                        }
+                    }
+                }
+                else
+                {
+                    // yay
+                    chainRenderer.SetPosition(i, transform.position);
+                }
+            }
         }
         else
         {
 
-            playerJoint.distance *= 0.9f;
-            anchorPoint.transform.parent.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 1f), ForceMode2D.Impulse);
-        }
-
-        //find the correct position
-        chainRenderer.positionCount = chainPositions.Count + 1;
-        
-        for (var i = chainRenderer.positionCount - 1; i >= 0; i--)
-        {
-            if (i != chainRenderer.positionCount - 1)
-            {
-                chainRenderer.SetPosition(i, chainPositions[i]);
-
-                //set anchor
-                if (i == chainPositions.Count - 1 || chainPositions.Count == 1)
-                {
-                    var tempChainPosition = chainPositions[chainPositions.Count - 1];
-                    if (chainPositions.Count == 1)
-                    {
-                        anchorRB.transform.position = tempChainPosition;
-                        if (!canHook)
-                        {
-                            playerJoint.distance = Vector2.Distance(transform.position, tempChainPosition);
-                            canHook = true;
-                        }
-                    }
-                    else
-                    {
-                        anchorRB.transform.position = tempChainPosition;
-                        if (!canHook)
-                        {
-                            playerJoint.distance = Vector2.Distance(transform.position, tempChainPosition);
-                            canHook = true;
-                        }
-                    }
-                }
-                // fixes some strange behaviours
-                else if (i - 1 == chainPositions.IndexOf(chainPositions.Last()))
-                {
-                    var tempChainPosition = chainPositions.Last();
-                    anchorRB.transform.position = tempChainPosition;
-                    if (!canHook)
-                    {
-                        playerJoint.distance = Vector2.Distance(transform.position, tempChainPosition);
-                        canHook = true;
-                    }
-                }
-            }
-            else
-            {
-                // yay
-                chainRenderer.SetPosition(i, transform.position);
-            }
         }
     }
 
@@ -318,8 +363,10 @@ public class Hook : MonoBehaviour
     private void ResetHook()
     {
         playerJoint.enabled = false;
+        pullJoint.enabled = false;
+        pullJoint.connectedBody = null;
+        isPulled = false;
         isChained = false;
-        //playerController.isSwinging = false;
         chainRenderer.positionCount = 2;
         chainRenderer.SetPosition(0, transform.position);
         chainRenderer.SetPosition(1, transform.position);
