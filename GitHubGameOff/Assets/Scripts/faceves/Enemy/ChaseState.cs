@@ -23,7 +23,23 @@ public class ChaseState : BaseState
         {
             return typeof(AttackState);
         }
+        else if (pastChaseThreshold()) 
+        {
+            Debug.Log("Past chase threshold");
+            return typeof(WanderState);
+        }
+
+
         return null;
+    }
+
+    private bool pastChaseThreshold()
+    {
+        float chaseThreshold = StateMachineSettings.DistanceWanderRange + StateMachineSettings.ExtraChaseDistance;
+        float currDistance = Vector2.Distance(originalPosition, transform.position);
+        if (chaseThreshold < currDistance)
+            return true;
+        return false;
     }
     
 }

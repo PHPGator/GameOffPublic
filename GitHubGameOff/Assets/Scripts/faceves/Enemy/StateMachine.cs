@@ -10,9 +10,15 @@ public class StateMachine : MonoBehaviour
     public event Action<BaseState> OnStateChanged;
     private Type initalStateType; //choose which state to be the starting state
     private Dictionary<Type, BaseState> availableStates; //cache the dictionary
+    private EnemyHealth enemyHealth;
 
-    
-    
+    private void Start()
+    {
+        enemyHealth = GetComponent<EnemyHealth>();
+    }
+
+
+
     public void SetStates(Dictionary<Type,BaseState> states, Type initialStateType)
     {
         availableStates = states;
@@ -22,6 +28,11 @@ public class StateMachine : MonoBehaviour
     
     private void Update()
     {
+        if (!enemyHealth.isAlive)
+        {
+            return;
+        }
+
         if(currentState == null)
         {
             currentState = availableStates[initalStateType];

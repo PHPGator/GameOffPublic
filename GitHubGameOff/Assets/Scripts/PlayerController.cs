@@ -17,17 +17,23 @@ public class PlayerController : MonoBehaviour {
     private Animator anim;
 
     private bool isGrounded;
+    private Vector2 direction;
+    
     public Transform groundCheck;
     public float checkRadius;
     public LayerMask whatIsGround;
 
     private PlayerHealth pHealth;
+    [SerializeField] private float playerWeaponDamage = 25f;
+    [SerializeField] private float playerWeaponRange = 1f;
 
     void Start() {
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         pHealth = GetComponent<PlayerHealth>();
+        playerWeaponDamage = 10f;
+        direction = new Vector2(1,0);
     }
 
     void Update() {
@@ -54,6 +60,11 @@ public class PlayerController : MonoBehaviour {
 		var canAttack = Input.GetKeyDown(KeyCode.LeftControl);
 		if(canAttack) {
 			anim.SetTrigger("New Trigger");
+            GameObject enemyObj = checkForHit();
+            if(enemyObj != null)
+            {
+                enemyObj.GetComponent<EnemyHealth>().decreaseHealth(playerWeaponDamage);
+            }
 		}
     }
 
@@ -61,9 +72,11 @@ public class PlayerController : MonoBehaviour {
     void PlayerFacingDirection() {
         if(moveInput < 0) {
             sr.flipX = true;
+            direction.x= -1;
         }
         else if(moveInput > 0) {
             sr.flipX = false;
+            direction.x = 1;
         }
     }
 
@@ -114,6 +127,45 @@ public class PlayerController : MonoBehaviour {
             anim.SetBool("IsDead", true);
     }
 
+    /** Combat Damage **/
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        GameObject collObj = collision.gameObject;
+        if (collObj.CompareTag("Enemy"))
+        {
+            Debug.Log("Ran into enemy damage");
+            pHealth.decreaseHealth(25f);
+        }
+
+    }
+
+    private GameObject checkForHit()
+    {
+        RaycastHit2D hit;
+        float colliderRadius = gameObject.GetComponent<BoxCollider2D>().size.x / 2;
+        var rayStartingPos = transform.position + (new Vector3(colliderRadius + 1f, 0, 0) * direction.x);
+
+        //for(int i =0; i < 24; i++)
+        // {
+        hit = Physics2D.Raycast(rayStartingPos, direction, playerWeaponRange);
+        if (hit.collider != null)
+        {
+            GameObject hitObject = hit.collider.gameObject;
+            if (hitObject != null && hitObject.CompareTag("Enemy"))
+            {
+                Debug.Log("Player: Hit Enemy");
+                Debug.DrawRay(rayStartingPos, direction * hit.distance, Color.red);
+                return hitObject;
+            }
+            else if (hitObject != null && hitObject.CompareTag("Player"))
+            {
+                Debug.Log("hitting something");
+                Debug.Log("Vec2 dir: " + direction);
+            }
+            
+        }
+        return null;
+    }
     private void PlayerDescent()
     {
 

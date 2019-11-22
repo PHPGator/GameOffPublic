@@ -7,6 +7,7 @@ public abstract class BaseState
 {
     protected GameObject gameObject;
     protected Transform transform;
+    protected readonly Vector2 originalPosition; //const value at run time;
 
     /** Input: GameObject
      * Output: None
@@ -19,6 +20,7 @@ public abstract class BaseState
     {
         this.gameObject = gameObject;
         this.transform = gameObject.transform;
+        this.originalPosition = gameObject.transform.position;
     }
 
     public abstract Type Tick();

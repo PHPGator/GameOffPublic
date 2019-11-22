@@ -9,13 +9,15 @@ public class Enemy : MonoBehaviour
     public StateMachine StateMachine => GetComponent<StateMachine>();
     private SpriteRenderer sr;
     private Dictionary<Type, BaseState> availableStates; //cache the dictionary
-    private Health health;
+    private EnemyHealth health;
+    [SerializeField] private float enemyWeaponDamage;
+
 
     // Use this for initialization
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
-        health = GetComponent<Health>();
+        health = GetComponent<EnemyHealth>();
         InitializeStateMachine();
     }
 
@@ -42,7 +44,9 @@ public class Enemy : MonoBehaviour
 
     public void Attack()
     {
-        Destroy(target.gameObject);
+        PlayerHealth pHealth = GameObject.Find("Player Test").GetComponent<PlayerHealth>();
+        pHealth.decreaseHealth(enemyWeaponDamage);
+        Debug.Log("Damaged Player: " + enemyWeaponDamage);
     }
     /**Input: Dictionary with the keys as the type of state (class) that the value will be storing (the actual created state) 
      * Output: None
@@ -58,5 +62,16 @@ public class Enemy : MonoBehaviour
             {typeof(AttackState), new AttackState(this) }
         };
         GetComponent<StateMachine>().SetStates(availableStates,_initalStateType);
+    }
+    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        /**
+        GameObject collObj = collision.gameObject;
+        if (collObj.CompareTag("Player"))
+        {
+            collObj.GetComponent<PlayerHealth>().decreaseHealth(enemyWeaponDamage);
+        }
+        **/
     }
 }

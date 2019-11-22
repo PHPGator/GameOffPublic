@@ -7,7 +7,7 @@ public class WanderState : BaseState
     private Vector2 direction;
     private Vector2 destination;
     private Vector2 distanceOffset;
-    private readonly Vector2 originalPosition; //const value at run time
+    
 
     private float rayDistance = 3.5f;
     private readonly LayerMask layerMask; 
@@ -18,8 +18,7 @@ public class WanderState : BaseState
     {
         this.enemy = enemy;
         direction = transform.right.normalized; // initialize direction to the standard right x axis
-        originalPosition = transform.position;
-        distanceOffset = new Vector2(StateMachineSettings.DistanceRange, 0);
+        distanceOffset = new Vector2(StateMachineSettings.DistanceWanderRange, 0);
         destination = originalPosition + distanceOffset;
         layerMask = LayerMask.NameToLayer("Ground");
         Debug.Log("Original: " + originalPosition.ToString());

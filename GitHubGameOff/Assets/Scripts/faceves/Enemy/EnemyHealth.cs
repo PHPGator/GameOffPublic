@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Health : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
 
     public float currentHealth = 100.0f;
     public float maxHealth = 100.0f;
     public bool isAlive = true;
-    public bool debugging = true;
+    public bool debugging = false;
 
     private TextMeshProUGUI currentHealthText;
     // Start is called before the first frame update
     void Start()
     {
-        currentHealthText = GameObject.FindWithTag("Debugging - Player Health").GetComponent<TextMeshProUGUI>();
+        //currentHealthText = GameObject.FindWithTag("Debugging - Player Health").GetComponent<TextMeshProUGUI>();
         checkHealth();
     }
 
