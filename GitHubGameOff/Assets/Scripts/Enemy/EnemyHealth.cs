@@ -53,6 +53,7 @@ public class EnemyHealth : MonoBehaviour
             currentHealth = maxHealth;
         }
 
+        Debug.Log("Enemy Health: " + currentHealth);
         // if debugging, go ahead and update UI
         if (debugging)
         {

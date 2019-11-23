@@ -90,7 +90,7 @@ public class DimensionController: MonoBehaviour
      **/
     private bool timeWarpButtonClicked()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetKeyDown(KeyCode.B))
             return true;
         return false;
     }

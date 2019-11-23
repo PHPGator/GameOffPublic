@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     private SpriteRenderer sr;
     private Dictionary<Type, BaseState> availableStates; //cache the dictionary
     private EnemyHealth health;
+    private Animator anim;
     [SerializeField] private float enemyWeaponDamage;
 
 
@@ -18,6 +19,7 @@ public class Enemy : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
         health = GetComponent<EnemyHealth>();
+        anim = GetComponent<Animator>();
         InitializeStateMachine();
     }
 
@@ -25,6 +27,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         health.checkHealth();
+        EnemyDeath();
     }
 
     public void FlipEnemySprite()
@@ -48,6 +51,13 @@ public class Enemy : MonoBehaviour
         pHealth.decreaseHealth(enemyWeaponDamage);
         Debug.Log("Damaged Player: " + enemyWeaponDamage);
     }
+
+    public void EnemyDeath()
+    {
+        if (!health.isAlive)
+            anim.SetBool("IsDead", true);
+    }
+
     /**Input: Dictionary with the keys as the type of state (class) that the value will be storing (the actual created state) 
      * Output: None
      * SetStates caches the Dictionary for intermittent use.

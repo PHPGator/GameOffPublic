@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour {
     public LayerMask whatIsGround;
 
     private PlayerHealth pHealth;
-    [SerializeField] private float playerWeaponDamage = 25f;
+    [SerializeField] private float playerWeaponDamage = 50f;
     [SerializeField] private float playerWeaponRange = 1f;
 
     void Start() {
@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour {
 		var canAttack = Input.GetKeyDown(KeyCode.LeftControl);
 		if(canAttack) {
 			anim.SetTrigger("New Trigger");
-            GameObject enemyObj = checkForHit();
+            GameObject enemyObj = checkForEnemyHit();
             if(enemyObj != null)
             {
                 enemyObj.GetComponent<EnemyHealth>().decreaseHealth(playerWeaponDamage);
@@ -139,7 +139,7 @@ public class PlayerController : MonoBehaviour {
 
     }
 
-    private GameObject checkForHit()
+    private GameObject checkForEnemyHit()
     {
         RaycastHit2D hit;
         float colliderRadius = gameObject.GetComponent<BoxCollider2D>().size.x / 2;
