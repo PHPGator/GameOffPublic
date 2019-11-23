@@ -69,7 +69,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -315,6 +315,8 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
+  playerWeaponDamage: 50
+  playerWeaponRange: 1
 --- !u!114 &396789345743899708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -559,7 +561,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7095898776517303015}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.033, y: -0.124, z: 0}
+  m_LocalPosition: {x: 0.033, y: -0.086, z: 0}
   m_LocalScale: {x: 0.227825, y: 0.227825, z: 0.227825}
   m_Children: []
   m_Father: {fileID: 7095898776061108797}

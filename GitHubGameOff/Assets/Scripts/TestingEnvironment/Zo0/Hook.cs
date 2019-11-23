@@ -13,6 +13,7 @@ public class Hook : MonoBehaviour
     public SpringJoint2D playerJoint;
     public DistanceJoint2D pullJoint;
     private Vector2 playerPosition;
+    private Vector2 hookPosition;
     private bool isChained;
     private bool isPulled;
     private float aimMemory;
@@ -74,7 +75,8 @@ public class Hook : MonoBehaviour
         var x = transform.position.x + distance * Mathf.Cos(aimAngle);
         var y = transform.position.y + distance * Mathf.Sin(aimAngle);
 
-        var targetPosition = new Vector3(x, y, 10f);
+        var targetPosition = new Vector3(x, y, 0f);
+        //print(targetPosition);
         target.transform.position = targetPosition;
     }
 
@@ -96,6 +98,8 @@ public class Hook : MonoBehaviour
                 {
 
                     chainPositions.Add(hit.point);
+                    hookPosition = hit.point;
+                    print(transform.position);
                     chainDistance = Vector2.Distance(playerPosition, hit.point);
 
                     //grappling hook force
@@ -205,7 +209,7 @@ public class Hook : MonoBehaviour
         }
 
         //scorpion pull
-        if (isPulled && pullJoint.distance > 1)
+        if (isPulled && pullJoint.distance >= 1.5f)
         {
 
             pullJoint.distance *= 0.9f;
@@ -240,8 +244,9 @@ public class Hook : MonoBehaviour
         if (!isPulled)
         {
 
-            playerJoint.frequency = chainDistance/chainLength;
-            print(playerJoint.frequency = chainDistance / chainLength);
+            var hookPull = Vector2.Distance(hookPosition, playerPosition);
+            playerJoint.frequency = hookPull/chainLength;
+            //print(playerJoint.frequency);
 
             chainRenderer.positionCount = chainPositions.Count + 1;
 
