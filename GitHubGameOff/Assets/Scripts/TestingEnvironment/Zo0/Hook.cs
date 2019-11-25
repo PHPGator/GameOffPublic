@@ -99,7 +99,7 @@ public class Hook : MonoBehaviour
 
                     chainPositions.Add(hit.point);
                     hookPosition = hit.point;
-                    print(transform.position);
+                    //print(transform.position);
                     chainDistance = Vector2.Distance(playerPosition, hit.point);
 
                     //grappling hook force

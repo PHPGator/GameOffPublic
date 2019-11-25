@@ -20,7 +20,8 @@ public class PlayerController : MonoBehaviour {
     private Vector2 direction;
     
     public Transform groundCheck;
-    public float checkRadius;
+    public float checkRadiusX;
+    public float checkRadiusY;
     public LayerMask whatIsGround;
 
     private PlayerHealth pHealth;
@@ -52,7 +53,8 @@ public class PlayerController : MonoBehaviour {
 
     // Check to see if the Physics2D game object attached to the players feet is touching any object set to the "ground" layer
     void PlayerGrounded() {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
+        //isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
+        isGrounded = Physics2D.OverlapBox(groundCheck.position, new Vector2(checkRadiusX, checkRadiusY), 0, whatIsGround);
     }
 
     // Simple function to trigger very basic swing attack.
